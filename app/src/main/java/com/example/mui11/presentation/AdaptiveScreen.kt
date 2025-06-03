@@ -1,6 +1,7 @@
 package com.example.mui11.presentation
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -27,11 +28,12 @@ fun AdaptiveScreen(modifier: Modifier) {
                 .padding(top = 24.dp),
             textAlign = TextAlign.Center
         )
-
+        Spacer(modifier = Modifier.weight(1f))
         if (isPortrait) {
-            LandscapeLayoutContent(modifier = modifier)
+            PortraitLayoutContent(modifier = Modifier)
         } else {
-            PortraitLayoutContent(modifier = modifier)
+            LandscapeLayoutContent(modifier = Modifier)
         }
+        Spacer(modifier = Modifier.weight(1f))
     }
 }
